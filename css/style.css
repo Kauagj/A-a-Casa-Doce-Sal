@@ -1,0 +1,1021 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@95.4,300..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+#inicio,
+#cardapio,
+#contato{
+    scroll-margin-top: 105px;
+}
+
+body{
+    font-family: "Fredoka", sans-serif;
+    background: #f8f8f8;
+    color: #333;
+    overflow-x: hidden;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+/* NAVBAR */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:28px 8%;
+    background:#5b2393;
+    color:white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.logo img{
+    width:64px;
+}
+
+.logo span{
+    font-size:1.6rem;
+    font-weight:600;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#ffd447;
+}
+
+.button-cardapio{
+    display:inline-block;
+    background:#7e4db4;
+    color:white;
+    text-decoration:none;
+    border:none;
+    padding:14px 28px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:600;
+    font-family: "Fredoka", sans-serif;
+    transition:.3s;
+}
+
+.button-cardapio:hover{
+    background:#4b1d8f;
+}
+
+/* MENU HAMBÚRGUER (escondido no desktop) */
+
+.menu-hamburguer{
+    display:none;
+    flex-direction:column;
+    justify-content:space-between;
+    width:32px;
+    height:22px;
+    background:none;
+    border:none;
+    padding:0;
+    cursor:pointer;
+    z-index:110;
+}
+
+.menu-hamburguer span{
+    display:block;
+    height:3px;
+    width:100%;
+    background:white;
+    border-radius:3px;
+    transition:.3s;
+}
+
+.menu-hamburguer.ativo span:nth-child(1){
+    transform:translateY(9.5px) rotate(45deg);
+}
+
+.menu-hamburguer.ativo span:nth-child(2){
+    opacity:0;
+}
+
+.menu-hamburguer.ativo span:nth-child(3){
+    transform:translateY(-9.5px) rotate(-45deg);
+}
+
+/* HERO */
+
+.hero{
+    background-image:url("../img/hero-fundo-img.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+
+    min-height:90vh;
+
+    display:flex;
+    align-items:center;
+
+    padding:60px 8%;
+}
+
+.hero-text{
+    max-width:700px;
+}
+
+.hero-text h1{
+    font-size: 80px;
+    color:#4b1d8f;
+    margin-bottom:20px;
+    line-height:1.1;
+}
+
+.hero-text p{
+    font-size:clamp(1.1rem,2vw,2rem);
+    margin-bottom:35px;
+    color:#444;
+}
+
+.button-contato{
+    display:inline-block;
+    background:#5b2393;
+    color:white;
+    text-decoration:none;
+    border:none;
+    padding:18px 40px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:18px;
+    font-family: "Fredoka", sans-serif;
+    transition:.3s;
+}
+
+.button-contato:hover{
+    background:#4b1d8f;
+}
+
+/* SEÇÃO SALGADOS / PROMOÇÃO */
+
+.salgados-promoção{
+    background:#e8dff5;
+    padding:80px 5%;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.card-salgados,
+.card-promo-tamanhos{
+    width:100%;
+    max-width:590px;
+    min-height:700px;
+    background:#ffffffcc;
+    border:3px solid #7b4bc980;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.card-salgados h2{
+    font-size:60px;
+    text-align:center;
+    color:#4b1d8f;
+    margin-bottom:35px;
+}
+
+.card-salgados ul{
+    list-style:none;
+}
+
+.card-salgados li{
+    font-size:28px;
+    color:#7b4bc9;
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+.card-salgados li button{
+    all:unset;
+    display:block;
+    width:100%;
+    cursor:pointer;
+    padding:4px 0;
+}
+
+.card-salgados li::before{
+
+    margin-right:15px;
+    color:#7a4fd4;
+}
+
+.card-promo-tamanhos h2{
+    font-size:60px;
+    text-align:center;
+    color:#4b1d8f;
+    margin-bottom:25px;
+}
+
+.card-promo-tamanhos p{
+    font-size:28px;
+    text-align:center;
+    color:#7b4bc9;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.card-promo-tamanhos hr{
+    margin:30px 0;
+    border:none;
+    height:2px;
+    background:#d8c7f6;
+}
+
+.tamanhos h2{
+    margin-top:20px;
+}
+
+.tamanhos p{
+    display:flex;
+    justify-content:space-between;
+    padding:8px 30px;
+}
+
+.tamanhos span{
+    color:#4b1d8f;
+    font-weight:700;
+}
+
+/* ADICIONAIS */
+
+.seção-adicionais{
+    background:#e8dff5;
+    padding:80px 5%;
+}
+
+.adicionais{
+    background:#6b3fa0;
+    border-radius:25px;
+    padding:40px;
+    max-width:1100px;
+    margin:auto;
+    color:white;
+}
+
+.adicionais h2{
+    text-align:center;
+    font-size:50px;
+    margin-bottom:40px;
+}
+
+.conteudo{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.coluna{
+    flex:1;
+}
+
+.separador{
+    width:3px;
+    background:#50217e;
+}
+
+.item{
+    display:flex;
+    justify-content:space-between;
+    gap: 10px;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+    padding:12px 0;
+    font-size:18px;
+}
+
+.item span:first-child{
+    font-weight: 500;
+}
+
+.item span:last-child{
+    font-weight: 700;
+    color: #ffd447;
+    white-space: nowrap;
+}
+
+/* AÇAÍ NA GARRAFA / MILKSHAKE */
+
+.garrafa-milkshake{
+    background:#f8f8f8;
+    padding:80px 5%;
+}
+
+.card-garrafa,
+.card-milkshake{
+    width:100%;
+    max-width:590px;
+    background:#ffffffcc;
+    border:3px solid #7b4bc980;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.card-garrafa h2,
+.card-milkshake h2{
+    font-size:42px;
+    text-align:center;
+    color:#4b1d8f;
+    margin-bottom:10px;
+}
+
+.card-garrafa .subtitulo,
+.card-milkshake .subtitulo{
+    text-align:center;
+    font-size:18px;
+    color:#7b4bc9;
+    font-weight:600;
+    margin-bottom:25px;
+}
+
+.card-garrafa .subtitulo span,
+.card-milkshake .subtitulo span{
+    color:#4b1d8f;
+    font-weight:700;
+}
+
+.card-garrafa h3,
+.card-milkshake h4{
+    color:#4b1d8f;
+    font-size:22px;
+    margin-bottom:12px;
+    text-align: center;
+}
+
+.lista-precos p{
+    display:flex;
+    justify-content:space-between;
+    padding:8px 10px;
+    font-size:16px;
+    color:#555;
+    border-bottom: 1px dashed #d8c7f6;
+}
+
+.lista-precos p span:last-child{
+    color:#4b1d8f;
+    font-weight:700;
+}
+
+.milkshake-topo{
+    display:flex;
+    justify-content:space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.milkshake-topo ul{
+    list-style:none;
+    color:#7b4bc9;
+    font-weight:600;
+    font-size: 18px;
+}
+
+.milkshake-topo li{
+    margin-bottom: 10px;
+}
+
+.milkshake-topo li button{
+    all:unset;
+    display:block;
+    width:100%;
+    cursor:pointer;
+    padding:2px 0;
+}
+
+.milkshake-topo li button.produto-clicavel:hover{
+    color:#4b1d8f;
+}
+
+.tamanhos-milkshake h3{
+    color:#4b1d8f;
+    margin-bottom: 10px;
+}
+
+.tamanhos-milkshake p{
+    display:flex;
+    justify-content:space-between;
+    gap: 15px;
+    font-size: 15px;
+    padding: 4px 0;
+    color:#555;
+}
+
+.tamanhos-milkshake span:last-child{
+    color:#4b1d8f;
+    font-weight:700;
+}
+
+/* PEDIDO / FORMULÁRIO */
+
+.pedido{
+    display:flex;
+    flex-wrap:wrap;
+    background-image: url("../img/moto-fundo-img.png");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.pedido-info{
+    flex:1 1 400px;
+    padding:80px 8%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.pedido-info h2{
+    font-size:clamp(1.8rem,3vw,2.5rem);
+    margin-bottom:20px;
+    line-height:1.2;
+}
+
+.pedido-info p{
+    font-size:16px;
+    margin-bottom:30px;
+    color:#e6dcf7;
+    line-height:1.6;
+}
+
+.pedido-info h3{
+    margin-bottom:10px;
+}
+
+.pedido-info .telefone{
+    display:inline-block;
+    background:white;
+    color:#4b1d8f;
+    font-weight:700;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:30px;
+    width:fit-content;
+}
+
+.formulario-pedido{
+    flex:1 1 400px;
+    background:#5b2393;
+    padding:60px 8%;
+}
+
+.formulario-pedido h3{
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.formulario-pedido label{
+    display:block;
+    font-size:14px;
+    margin-bottom:6px;
+    color:#e6dcf7;
+}
+
+/* FORMULÁRIO - inputs */
+
+input,
+textarea{
+    width:100%;
+    padding:14px;
+    margin-top:8px;
+    margin-bottom:20px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+    font-family: "Fredoka", sans-serif;
+}
+
+textarea{
+    min-height:150px;
+    resize:none;
+}
+
+.campo-resumo-pedido{
+    min-height:110px;
+    background:#f3edfb;
+    color:#333;
+    cursor:default;
+    white-space:pre-line;
+    font-size:14px;
+}
+
+.campo-resumo-pedido::placeholder{
+    color:#8a7aa8;
+}
+
+button{
+    font-family:"Fredoka", sans-serif;
+}
+
+.formulario-pedido button{
+    background:#ffd447;
+    color:#4b1d8f;
+    border:none;
+    padding:16px;
+    width:100%;
+    border-radius:30px;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.formulario-pedido button:hover{
+    background:#fff;
+}
+
+.produto-clicavel{
+    cursor:pointer;
+    transition:.2s;
+    border-radius:8px;
+}
+
+.produto-clicavel:hover{
+    background:rgba(123,75,201,0.12);
+}
+
+.card-salgados li button.produto-clicavel:hover{
+    color:#4b1d8f;
+}
+
+.item.produto-clicavel:hover{
+    background:rgba(255,255,255,0.12);
+}
+
+.produto-clicavel:focus-visible{
+    outline:2px solid #4b1d8f;
+    outline-offset:2px;
+}
+
+@keyframes selecionar{
+    0%{ transform:scale(1); }
+    40%{ transform:scale(1.04); background:rgba(255,212,71,0.35); }
+    100%{ transform:scale(1); }
+}
+
+.item-selecionado{
+    animation:selecionar .35s ease;
+}
+
+/* CARRINHO FLUTUANTE */
+
+.carrinho-flutuante{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    background:#4b1d8f;
+    color:white;
+    border:none;
+    font-size:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+    z-index:200;
+    transition:.2s;
+}
+
+.carrinho-flutuante:hover{
+    background:#5b2393;
+    transform:translateY(-3px);
+}
+
+.carrinho-flutuante.pulsar{
+    animation:pulsar .3s ease;
+}
+
+@keyframes pulsar{
+    0%{ transform:scale(1); }
+    50%{ transform:scale(1.15); }
+    100%{ transform:scale(1); }
+}
+
+.carrinho-contador{
+    position:absolute;
+    top:-4px;
+    right:-4px;
+    background:#ffd447;
+    color:#4b1d8f;
+    font-size:13px;
+    font-weight:700;
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    border:2px solid white;
+}
+
+.carrinho-painel{
+    position:fixed;
+    bottom:110px;
+    right:30px;
+    width:360px;
+    max-width:90vw;
+    max-height:70vh;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 12px 35px rgba(0,0,0,.25);
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    opacity:0;
+    transform:translateY(20px);
+    pointer-events:none;
+    transition:.25s;
+    z-index:200;
+}
+
+.carrinho-painel.aberto{
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+}
+
+.carrinho-header{
+    background:#4b1d8f;
+    color:white;
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.carrinho-header h3{
+    font-size:20px;
+}
+
+.fechar-carrinho{
+    background:none;
+    border:none;
+    color:white;
+    font-size:26px;
+    line-height:1;
+    cursor:pointer;
+}
+
+.carrinho-itens{
+    padding:15px 20px;
+    overflow-y:auto;
+    flex:1;
+}
+
+.carrinho-vazio{
+    color:#888;
+    font-size:14px;
+    text-align:center;
+    padding:20px 0;
+}
+
+.carrinho-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+}
+
+.carrinho-item-info{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+.carrinho-item-nome{
+    font-weight:600;
+    font-size:15px;
+    color:#333;
+}
+
+.carrinho-item-preco{
+    font-size:13px;
+    color:#4b1d8f;
+    font-weight:700;
+}
+
+.carrinho-item-qtd{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.qtd-btn{
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    border:1px solid #7b4bc9;
+    background:white;
+    color:#4b1d8f;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    line-height:1;
+    transition:.2s;
+}
+
+.qtd-btn:hover{
+    background:#7b4bc9;
+    color:white;
+}
+
+.carrinho-footer{
+    padding:16px 20px;
+    border-top:1px solid #eee;
+}
+
+.carrinho-total{
+    display:flex;
+    justify-content:space-between;
+    font-size:18px;
+    font-weight:700;
+    color:#4b1d8f;
+    margin-bottom:12px;
+}
+
+.carrinho-limpar{
+    width:100%;
+    background:none;
+    border:1px solid #c0392b;
+    color:#c0392b;
+    padding:10px;
+    border-radius:30px;
+    font-family:"Fredoka", sans-serif;
+    font-size:14px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.carrinho-limpar:hover{
+    background:#c0392b;
+    color:white;
+}
+
+/* FOOTER */
+
+footer{
+    background:#4b1d8f;
+    color:white;
+    padding:60px 8%;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+footer img{
+    width:60px;
+}
+
+footer h2,
+footer h3{
+    margin-bottom:10px;
+}
+
+footer p{
+    margin-bottom:8px;
+}
+
+/* ============ RESPONSIVIDADE ============ */
+
+/* TABLET */
+@media (max-width:1024px){
+
+    .card-salgados,
+    .card-promo-tamanhos{
+        min-height:auto;
+    }
+
+    .container{
+        gap:25px;
+    }
+}
+
+/* CELULAR */
+@media (max-width:768px){
+
+    .navbar{
+        padding:18px 6%;
+    }
+
+    .logo img{
+        width:48px;
+    }
+
+    .logo span{
+        font-size:1.2rem;
+    }
+
+    .menu-hamburguer{
+        display:flex;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        flex-direction:column;
+        gap:0;
+        background:#5b2393;
+        max-height:0;
+        overflow:hidden;
+        transition:max-height .35s ease;
+    }
+
+    .nav-links.aberto{
+        max-height:320px;
+        padding:10px 0 24px;
+        box-shadow:0 10px 20px rgba(0,0,0,.2);
+    }
+
+    .nav-links a{
+        width:100%;
+        padding:14px 0;
+        font-size:18px;
+    }
+
+    .nav-links .button-cardapio{
+        margin-top:8px;
+        width:calc(100% - 48px);
+        text-align:center;
+    }
+
+    .hero{
+        text-align:center;
+        justify-content:center;
+        padding:50px 20px;
+        background-image: url(../img/hero-img-respon.png);
+    }
+
+    .hero-text h1{
+        font-size:2.5rem;
+    }
+
+    .hero-text p{
+        font-size:1.1rem;
+        color: #fff;
+    }
+
+    .button-contato{
+        width:100%;
+        max-width:300px;
+    }
+
+    .card-salgados h2,
+    .card-promo-tamanhos h2{
+        font-size:40px;
+    }
+
+    .card-salgados li{
+        font-size:20px;
+    }
+
+    .card-promo-tamanhos p{
+        font-size:20px;
+    }
+
+    .adicionais{
+        padding:25px;
+    }
+
+    .adicionais h2{
+        font-size:35px;
+    }
+
+    .conteudo{
+        flex-direction:column;
+        gap:0;
+    }
+
+    .separador{
+        display:none;
+    }
+
+    .item{
+        font-size:14px;
+    }
+
+    .card-garrafa h2,
+    .card-milkshake h2{
+        font-size:32px;
+    }
+
+    .milkshake-topo{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .pedido-info,
+    .formulario-pedido{
+        padding:50px 6%;
+    }
+
+    .pedido {
+        background-image: none;
+        background-color: #7a4fd4;
+    }
+
+    footer{
+        flex-direction:column;
+        text-align:center;
+        align-items:center;
+    }
+
+    .footer-logo{
+        flex-direction:column;
+    }
+
+    .carrinho-flutuante{
+        bottom:20px;
+        right:20px;
+        width:56px;
+        height:56px;
+        font-size:24px;
+    }
+
+    .carrinho-painel{
+        bottom:0;
+        right:0;
+        left:0;
+        width:100%;
+        max-width:100%;
+        max-height:80vh;
+        border-radius:20px 20px 0 0;
+    }
+}
+
+/* CELULAR PEQUENO */
+@media (max-width:400px){
+
+    .hero-text h1{
+        font-size:2rem;
+    }
+
+    .card-salgados h2,
+    .card-promo-tamanhos h2{
+        font-size:32px;
+    }
+
+    .lista-precos p,
+    .tamanhos-milkshake p{
+        font-size:13px;
+    }
+}

@@ -878,7 +878,6 @@ footer p{
         max-height:0;
         overflow:hidden;
         transition:max-height .35s ease;
-        justify-content: center;
     }
 
     .nav-links.aberto{
@@ -891,6 +890,7 @@ footer p{
         width:100%;
         padding:14px 0;
         font-size:18px;
+        text-align: center;
     }
 
     .nav-links .button-cardapio{

@@ -878,7 +878,7 @@ footer p{
         max-height:0;
         overflow:hidden;
         transition:max-height .35s ease;
-        align-items: center;
+        justify-content: center;
     }
 
     .nav-links.aberto{
